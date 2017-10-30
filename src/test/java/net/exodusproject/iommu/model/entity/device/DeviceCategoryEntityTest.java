@@ -22,7 +22,7 @@ public class DeviceCategoryEntityTest {
 		DeviceCategoryEntity instance = new DeviceCategoryEntity();
 		instance.setName("PCI bridge");
 
-		assertEquals(instance.getName(), "PCI bridge");
+		assertEquals("PCI bridge", instance.getName());
 	}
 
 	@Test(expected = IllegalArgumentException.class)
@@ -48,7 +48,7 @@ public class DeviceCategoryEntityTest {
 		DeviceCategoryEntity instance = new DeviceCategoryEntity();
 		instance.setDeviceClass("06");
 
-		assertEquals(instance.getDeviceClass(), "06");
+		assertEquals("06", instance.getDeviceClass());
 	}
 
 	@Test(expected = IllegalArgumentException.class)
@@ -74,7 +74,7 @@ public class DeviceCategoryEntityTest {
 		DeviceCategoryEntity instance = new DeviceCategoryEntity();
 		instance.setDeviceSubclass("04");
 
-		assertEquals(instance.getDeviceSubclass(), "04");
+		assertEquals("04", instance.getDeviceSubclass());
 	}
 
 	@Test(expected = IllegalArgumentException.class)

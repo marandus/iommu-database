@@ -22,13 +22,19 @@ public class DeviceEntityTest {
 		DeviceEntity instance = new DeviceEntity();
 		instance.setVendorId("8086");
 
-		assertEquals(instance.getVendorId(), "8086");
+		assertEquals("8086", instance.getVendorId());
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testSetVendorId_null() {
 		DeviceEntity instance = new DeviceEntity();
 		instance.setVendorId(null);
+	}
+    
+	@Test(expected = IllegalArgumentException.class)
+	public void testSetVendorId_empty() {
+		DeviceEntity instance = new DeviceEntity();
+		instance.setVendorId("");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
@@ -48,7 +54,7 @@ public class DeviceEntityTest {
 		DeviceEntity instance = new DeviceEntity();
 		instance.setDeviceId("3c80");
 
-		assertEquals(instance.getDeviceId(), "3c80");
+		assertEquals("3c80", instance.getDeviceId());
 	}
 
 	@Test(expected = IllegalArgumentException.class)
