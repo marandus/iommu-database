@@ -2,13 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>net.exodusproject</groupId>
+	<groupId>com.github.marandus</groupId>
 	<artifactId>iommu-database</artifactId>
 	<version>0.1-SNAPSHOT</version>
 
 	<packaging>${packaging.type}</packaging>
 
+    <name>iommu-database</name>
 	<description>A webservice that provides a searchable database of IOMMU groupings for different mainboards.</description>
+    <url>https://github.com/marandus/iommu-database</url>
 	<inceptionYear>2017</inceptionYear>
 
 	<developers>
@@ -19,6 +21,12 @@
 			<url>https://github.com/marandus</url>
 		</developer>
 	</developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:marandus/iommu-database.git</connection>
+        <developerConnection>scm:git:git@github.com:marandus/iommu-database.git</developerConnection>
+        <url>https://github.com/marandus/iommu-database</url>
+    </scm>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -59,7 +67,11 @@
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 		</dependency>
-
+        <dependency>
+            <groupId>com.github.marandus</groupId>
+            <artifactId>pci-ids</artifactId>
+            <version>0.3</version>
+        </dependency>
 
 		<!-- TEST dependencies -->
 		<dependency>
