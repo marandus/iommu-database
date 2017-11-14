@@ -15,7 +15,8 @@ import lombok.Setter;
 import lombok.ToString;
 import com.github.marandus.iommudb.model.entity.AbstractBaseEntity;
 import com.github.marandus.iommudb.model.entity.device.DeviceEntity;
-import com.github.marandus.iommudb.service.util.ArgumentValidator;
+import com.github.marandus.argval.ArgumentValidator;
+import com.github.marandus.argval.enums.NumberCompareOperator;
 
 /**
  *
@@ -54,7 +55,7 @@ public class IommuGroupDeviceLinkEntity extends AbstractBaseEntity {
      */
     public void setPciDomain(String domain) {
         ArgumentValidator.requireNonBlank(domain, "PCI domain");
-        ArgumentValidator.requireStringLength(domain, 2, ArgumentValidator.NumberCompare.LESS_EQUAL, "PCI domain");
+        ArgumentValidator.requireStringLength(domain, 2, NumberCompareOperator.LESS_EQUAL, "PCI domain");
 
         this.pciDomain = domain;
     }
@@ -67,7 +68,7 @@ public class IommuGroupDeviceLinkEntity extends AbstractBaseEntity {
      */
     public void setPciBus(String bus) {
         ArgumentValidator.requireNonBlank(bus, "PCI bus");
-        ArgumentValidator.requireStringLength(bus, 2, ArgumentValidator.NumberCompare.EQUAL, "PCI bus");
+        ArgumentValidator.requireStringLength(bus, 2, NumberCompareOperator.EQUAL, "PCI bus");
 
         this.pciBus = bus;
     }
@@ -80,7 +81,7 @@ public class IommuGroupDeviceLinkEntity extends AbstractBaseEntity {
      */
     public void setPciDevice(String device) {
         ArgumentValidator.requireNonBlank(device, "PCI device");
-        ArgumentValidator.requireStringLength(device, 2, ArgumentValidator.NumberCompare.EQUAL, "PCI device");
+        ArgumentValidator.requireStringLength(device, 2, NumberCompareOperator.EQUAL, "PCI device");
 
         this.pciDevice = device;
     }
@@ -92,8 +93,8 @@ public class IommuGroupDeviceLinkEntity extends AbstractBaseEntity {
      * @param function PCI function
      */
     public void setPciFunction(String function) {
-        ArgumentValidator.requireNonBlank(function, "PCI functionvvv");
-        ArgumentValidator.requireStringLength(function, 1, ArgumentValidator.NumberCompare.EQUAL, "PCI function");
+        ArgumentValidator.requireNonBlank(function, "PCI function");
+        ArgumentValidator.requireStringLength(function, 1, NumberCompareOperator.EQUAL, "PCI function");
 
         this.pciFunction = function;
     }

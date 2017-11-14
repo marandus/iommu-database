@@ -5,6 +5,8 @@
  */
 package com.github.marandus.iommudb.model.entity.device;
 
+import com.github.marandus.argval.ArgumentValidator;
+import com.github.marandus.argval.enums.NumberCompareOperator;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -12,8 +14,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import com.github.marandus.iommudb.model.entity.AbstractBaseEntity;
-import com.github.marandus.iommudb.service.util.ArgumentValidator;
-import com.github.marandus.iommudb.service.util.ArgumentValidator.NumberCompare;
 
 /**
  *
@@ -53,7 +53,7 @@ public class DeviceCategoryEntity extends AbstractBaseEntity {
 	 * @param deviceClass Device class, must be a 2 character string
 	 */
 	public void setDeviceClass(String deviceClass) {
-		ArgumentValidator.requireStringLength(deviceClass, 2, NumberCompare.EQUAL, "PCI device class");
+		ArgumentValidator.requireStringLength(deviceClass, 2, NumberCompareOperator.EQUAL, "PCI device class");
 
 		this.deviceClass = deviceClass;
 	}
@@ -65,7 +65,7 @@ public class DeviceCategoryEntity extends AbstractBaseEntity {
 	 * @param deviceSubclass Device subclass, must be a 2 character string
 	 */
 	public void setDeviceSubclass(String deviceSubclass) {
-		ArgumentValidator.requireStringLength(deviceSubclass, 2, NumberCompare.EQUAL, "PCI device subclass");
+		ArgumentValidator.requireStringLength(deviceSubclass, 2, NumberCompareOperator.EQUAL, "PCI device subclass");
 
 		this.deviceSubclass = deviceSubclass;
 	}

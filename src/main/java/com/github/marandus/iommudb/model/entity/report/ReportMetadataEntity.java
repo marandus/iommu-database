@@ -19,7 +19,7 @@ import lombok.ToString;
 import com.github.marandus.iommudb.model.entity.AbstractBaseEntity;
 import com.github.marandus.iommudb.model.entity.board.MainboardBiosEntity;
 import com.github.marandus.iommudb.model.entity.board.MainboardEntity;
-import com.github.marandus.iommudb.service.util.ArgumentValidator;
+import com.github.marandus.argval.ArgumentValidator;
 
 /**
  *

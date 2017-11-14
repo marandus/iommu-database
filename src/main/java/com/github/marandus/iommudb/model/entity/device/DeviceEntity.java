@@ -15,8 +15,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import com.github.marandus.iommudb.model.entity.AbstractBaseEntity;
-import com.github.marandus.iommudb.service.util.ArgumentValidator;
-import com.github.marandus.iommudb.service.util.ArgumentValidator.NumberCompare;
+import com.github.marandus.argval.ArgumentValidator;
+import com.github.marandus.argval.enums.NumberCompareOperator;
 
 /**
  *
@@ -29,36 +29,36 @@ import com.github.marandus.iommudb.service.util.ArgumentValidator.NumberCompare;
 @ToString(callSuper = true)
 public class DeviceEntity extends AbstractBaseEntity {
 
-	@Column(name = "name", length = 1000, updatable = false, nullable = false)
-	private String name;
+    @Column(name = "name", length = 1000, updatable = false, nullable = false)
+    private String name;
 
-	@Column(name = "vendor_id", length = 4, updatable = false, nullable = false)
-	private String vendorId;
+    @Column(name = "vendor_id", length = 4, updatable = false, nullable = false)
+    private String vendorId;
 
-	@Column(name = "vendor_name", updatable = true, nullable = true)
-	private String vendorName;
+    @Column(name = "vendor_name", updatable = true, nullable = true)
+    private String vendorName;
 
-	@Column(name = "device_id", length = 4, updatable = false, nullable = false)
-	private String deviceId;
+    @Column(name = "device_id", length = 4, updatable = false, nullable = false)
+    private String deviceId;
 
-	@Column(name = "device_name", length = 1000, updatable = true, nullable = true)
-	private String deviceName;
+    @Column(name = "device_name", length = 1000, updatable = true, nullable = true)
+    private String deviceName;
 
-	@Column(name = "revision", updatable = false, nullable = false)
-	private String revision;
+    @Column(name = "revision", updatable = false, nullable = false)
+    private String revision;
 
-	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH}, optional = false, fetch = FetchType.EAGER)
-	private DeviceCategoryEntity deviceClass;
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH}, optional = false, fetch = FetchType.EAGER)
+    private DeviceCategoryEntity deviceClass;
 
-	public void setVendorId(String vendorId) {
-		ArgumentValidator.requireStringLength(vendorId, 4, NumberCompare.EQUAL, "Vendor ID");
+    public void setVendorId(String vendorId) {
+        ArgumentValidator.requireStringLength(vendorId, 4, NumberCompareOperator.EQUAL, "Vendor ID");
 
-		this.vendorId = vendorId;
-	}
+        this.vendorId = vendorId;
+    }
 
-	public void setDeviceId(String deviceId) {
-		ArgumentValidator.requireStringLength(deviceId, 4, NumberCompare.EQUAL, "Device ID");
+    public void setDeviceId(String deviceId) {
+        ArgumentValidator.requireStringLength(deviceId, 4, NumberCompareOperator.EQUAL, "Device ID");
 
-		this.deviceId = deviceId;
-	}
+        this.deviceId = deviceId;
+    }
 }
