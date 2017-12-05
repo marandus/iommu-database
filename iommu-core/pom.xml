@@ -11,6 +11,20 @@
     <artifactId>iommu-core</artifactId>
     <packaging>${packaging.type}</packaging>
 
+    <name>IOMMU Database Core Application</name>
+    <description>Core application serving the IOMMU database</description>
+    <url>https://github.com/marandus/iommu-database</url>
+    <inceptionYear>2017</inceptionYear>
+
+    <developers>
+        <developer>
+            <id>marandus</id>
+            <name>Thomas Rix</name>
+            <email>thomasrix@exodus-project.net</email>
+            <url>https://github.com/marandus</url>
+        </developer>
+    </developers>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -20,6 +34,20 @@
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-tarfile</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-zipfile</artifactId>
+        </dependency>
+
+        <!-- MISC dependencies -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
         </dependency>
 
         <!-- PROJECT dependencies -->

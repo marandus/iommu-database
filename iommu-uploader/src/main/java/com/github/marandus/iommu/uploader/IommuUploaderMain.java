@@ -3,18 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.github.marandus.iommu.uploader;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 /**
  * TODO: Missing class level javadoc
  *
  * @author Thomas Rix (thomasrix@exodus-project.net)
  */
-public class IommuUploaderMain {
+@SpringBootApplication
+public class IommuUploaderMain extends SpringBootServletInitializer {
 
-    public static void main(String[] args) {
-        // TODO code application logic here
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(IommuUploaderMain.class);
     }
 
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(IommuUploaderMain.class, args);
+    }
 }

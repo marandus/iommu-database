@@ -11,11 +11,45 @@
     <artifactId>iommu-uploader</artifactId>
     <packaging>${packaging.type}</packaging>
 
+    <name>IOMMU Database Uploader Application</name>
+    <description>Uploader application for uploading reports to the IOMMU database</description>
+    <url>https://github.com/marandus/iommu-database</url>
+    <inceptionYear>2017</inceptionYear>
+
+    <developers>
+        <developer>
+            <id>marandus</id>
+            <name>Thomas Rix</name>
+            <email>thomasrix@exodus-project.net</email>
+            <url>https://github.com/marandus</url>
+        </developer>
+    </developers>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
+        <!-- SPRING dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- MISC dependencies -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
         <!-- PROJECT dependencies -->
         <dependency>
             <groupId>com.github.marandus</groupId>

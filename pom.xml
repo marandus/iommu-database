@@ -7,7 +7,7 @@
     <version>0.1</version>
     <packaging>pom</packaging>
 
-    <name>IOMMU database project</name>
+    <name>IOMMU Database project</name>
     <description>Parent POM for the IOMMU database project</description>
     <url>https://github.com/marandus/iommu-database</url>
     <inceptionYear>2017</inceptionYear>
@@ -39,7 +39,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>1.5.8.RELEASE</version>
+                <version>1.5.9.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -66,7 +66,7 @@
             <dependency>
                 <groupId>com.github.marandus</groupId>
                 <artifactId>argument-validator</artifactId>
-                <version>0.1.1</version>
+                <version>0.2</version>
             </dependency>
 
             <!-- TEST dependencies -->

@@ -11,6 +11,20 @@
     <artifactId>iommu-model</artifactId>
     <packaging>jar</packaging>
 
+    <name>IOMMU Database Shared Model</name>
+    <description>Shared model files for the IOMMU database</description>
+    <url>https://github.com/marandus/iommu-database</url>
+    <inceptionYear>2017</inceptionYear>
+
+    <developers>
+        <developer>
+            <id>marandus</id>
+            <name>Thomas Rix</name>
+            <email>thomasrix@exodus-project.net</email>
+            <url>https://github.com/marandus</url>
+        </developer>
+    </developers>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
