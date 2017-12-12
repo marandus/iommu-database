@@ -11,7 +11,9 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 /**
- * TODO: Missing class level javadoc
+ * Main class for starting the IOMMU Uploader application. It extends
+ * {@code SpringBootServletInitializer}, which allows the application to be served by a servlet
+ * container, such as Apache Tomcat.
  *
  * @author Thomas Rix (thomasrix@exodus-project.net)
  */
@@ -23,6 +25,13 @@ public class IommuUploaderMain extends SpringBootServletInitializer {
         return application.sources(IommuUploaderMain.class);
     }
 
+    /**
+     * Main entry point for the IOMMU Uploader application when running as a standalone application
+     * with embedded Tomcat. This is not used when deployed to a full-featured servlet container.
+     *
+     * @param args Application parameters
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         SpringApplication.run(IommuUploaderMain.class, args);
     }
